@@ -82,3 +82,8 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}

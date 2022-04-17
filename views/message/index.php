@@ -37,9 +37,21 @@ $this->params['breadcrumbs'][] = $this->title;
 .help-block{
     color: red;
 }
+.linediv{
+    border-left-width: thin;
+    border-radius: 5px;
+    background-color: whitesmoke;
+
+}
+.message_box{
+    border: 1px solid lightgray;
+    margin: auto;
+
+}
 </style>
 <div class="message-index">
-
+<div class="row">
+    <div class="col-md-8 message_box">
     <h1><?= Html::encode($this->title) ?></h1>
     <?php if($is_me): ?>
         <!-- <a href="javascript:void(0)" class="btn btn-primary" data-toggle="modal" data-target="#add-modal">Post Message</a> -->
@@ -73,7 +85,27 @@ $this->params['breadcrumbs'][] = $this->title;
     ]);
     ?>
     <?php Pjax::end(); ?>
+    </div>
+    <div class="col-md-3 linediv">
+        <h4>Your followers</h4>
+        <?php
 
+        foreach ($players as $p){
+            echo "<div class='col-md-12'>
+        ";
+           echo "<h6 style='text-align: left;'>";
+            echo Html::img('@web/img/user.png',['height'=>'20px']);
+
+            echo Html::a(Html::encode($p->first_name)." ". Html::encode($p->last_name), ['message/index','user_id'=>$p->id]);
+           echo" </h6>
+                </div>";
+
+        }
+
+        ?>
+    </div>
+
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
@@ -103,7 +135,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                 error: function(error) {
                     $($this).find('button[type="submit"]').prop('disabled', false);
-                    // alert('Something went wrong!', 'error');
+                    // alert('Something went wrong!', addUrl);
                     location.reload();
                 }
             });

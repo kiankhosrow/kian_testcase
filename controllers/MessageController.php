@@ -2,7 +2,10 @@
 
 namespace app\controllers;
 
+use app\models\Follow;
 use app\models\Message;
+use app\models\Player;
+use app\models\PlayerSearch;
 use app\models\User;
 use app\models\MessageSearch;
 use yii\web\Controller;
@@ -11,6 +14,7 @@ use yii\filters\VerbFilter;
 use Yii;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
+use yii\data\ActiveDataProvider;
 /**
  * MessageController implements the CRUD actions for Message model.
  */
@@ -58,13 +62,17 @@ class MessageController extends Controller
 
         $searchModel = new MessageSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
+        $followers=Follow::find()->select('touser_id')->andFilterWhere(['user_id'=>$user_id]);
+        $players=Player::find()->andFilterWhere(['<>','user_type',1])->andFilterWhere(['<>','id',$user_id])
+            ->andFilterWhere(['in','id',$followers])->all();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'title' => $title,
             'model'=>$model,
-            'is_me'=>$is_me
+            'is_me'=>$is_me,
+            'players'=>$players
         ]);
     }
 
@@ -107,10 +115,7 @@ class MessageController extends Controller
                 return ActiveForm::validate($model);
             }
 
-
             if ($model->load($this->request->post()) ) {
-
-                
 
                 $model->user_id = Yii::$app->user->identity->id;
                 $model->created_date = date('Y-m-d H:i:s');

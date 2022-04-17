@@ -26,8 +26,8 @@ info "Add the VM IP to the list of allowed IPs"
 awk -v ip=$IP -f /app/vagrant/provision/provision.awk /app/config/web.php
 
 info "Prepare root password for MySQL"
-debconf-set-selections <<< 'mariadb-server mysql-server/root_password password'
-debconf-set-selections <<< 'mariadb-server mysql-server/root_password_again password'
+debconf-set-selections <<< 'mysql-server mysql-server/root_password password'
+debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password'
 echo "Done!"
 
 info "Update OS software"

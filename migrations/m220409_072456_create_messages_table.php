@@ -15,7 +15,7 @@ class m220409_072456_create_messages_table extends Migration
         $this->createTable('messages', [
             'id' => $this->primaryKey(),
             'user_id' => $this->integer()->notNull(),
-            'message' => $this->string()->null()
+            'message' => $this->string()->null(),
         ]);
     }
 
