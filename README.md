@@ -30,8 +30,9 @@ I already hosted the website in free website hosting (infinityfree).
 You can have access via this Link : http://kiantestcase.infinityfreeapp.com/kian_testcase/web/
 There is two type of user admin which can add player and player they can post message.
 Admin:
-•	Username: admin@admin.com
-•	Password: admin
+Username: admin@admin.com
+Password: admin
 Player:
-•	Username: Khosrow.kian.786@gmail.com
-•	Password: 202020
+Username: Khosrow.kian.786@gmail.com
+Password: 202020
+
