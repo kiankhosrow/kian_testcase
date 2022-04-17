@@ -32,5 +32,5 @@ Username: admin@admin.com <br />
 Password: admin <br />
 Player: <br />
 Username: Khosrow.kian.786@gmail.com <br />
-Password: 202020 
+Password: 123456 
 
