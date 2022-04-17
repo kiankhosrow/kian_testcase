@@ -23,8 +23,8 @@ Running Project
 2.	Create a database in MySQL with the name of yii2basic
 3.	Import the SQL file 
 4.	Add username and password to the db.php in inside Config directory.
-5.	 Run http://localhost/kian_testcase/web/
-I already hosted the website in free website hosting (infinityfree). <br />
+5.	 Run http://localhost/kian_testcase/web/ <br />
+###### I already hosted the website in free website hosting (infinityfree). <br />
 You can have access via this Link : http://kiantestcase.infinityfreeapp.com/kian_testcase/web/ <br />
 There is two type of user admin which can add player and player they can post message. <br />
 Admin: <br />
