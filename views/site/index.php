@@ -16,7 +16,7 @@ $this->title = 'Kian Testcase';
         ?>
         <div class="row align-items-center justify-content-center">
             <div class="col-md-7">
-                <a href="/site/login" class="btn btn-info btn-block">Login</a>
+                <a href="?r=site/login" class="btn btn-info btn-block">Login</a>
             </div>
         </div>
         <?php
@@ -24,7 +24,7 @@ $this->title = 'Kian Testcase';
         ?>
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-7">
-                    <a href="/message/" class="btn btn-info btn-block">Message Board</a>
+                    <a href="?r=message/" class="btn btn-info btn-block">Message Board</a>
                 </div>
             </div>
         <?php
